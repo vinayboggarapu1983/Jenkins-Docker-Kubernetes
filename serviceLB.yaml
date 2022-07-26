@@ -17,7 +17,7 @@ spec:
   spec:
    containers:
    - name: myapp-app-loadbalancer
-     image: ameintu/devops:tagversion
+     image: 23663924/jenkinsdevops:tagversion
      ports:
      - containerPort: 8080
 
