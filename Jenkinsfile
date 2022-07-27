@@ -8,7 +8,7 @@ pipeline {
 		PROJECT_ID = 'gcp-vinay-first-project'
                 CLUSTER_NAME = 'cluster-1'
                 LOCATION = 'us-central1-c'
-                CREDENTIALS_ID = 'kubernetes'		
+                CREDENTIALS_ID = 'Kubernetes'		
 	}
 	
     stages {
@@ -44,7 +44,7 @@ pipeline {
 		    steps {
 			    script {
 				    echo "Push Docker Image"
-				    withCredentials([string(credentialsId: '23663924', variable: '23663924')]) {
+				    withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
             				sh "docker login -u 23663924 -p ${dockerhub}"
 				    }
 				        myimage.push("${env.BUILD_ID}")
