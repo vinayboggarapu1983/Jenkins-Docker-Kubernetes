@@ -35,7 +35,7 @@ pipeline {
 		    steps {
 			    sh 'whoami'
 			    script {
-				    myimage = docker.build("23663924/jenkinsdevops:${env.BUILD_ID}")
+				    myimage = docker.build("vinayboggarapu/jenkinsdevops:${env.BUILD_ID}")
 			    }
 		    }
 	    }
@@ -45,7 +45,7 @@ pipeline {
 			    script {
 				    echo "Push Docker Image"
 				    withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
-            				sh "docker login -u 23663924 -p ${dockerhub}"
+            				sh "docker login -u vinayboggarapu -p ${dockerhub}"
 				    }
 				        myimage.push("${env.BUILD_ID}")
 				    
